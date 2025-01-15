@@ -19,7 +19,7 @@ const errorHandlerMiddleware = require("./middleware/error-handler");
 const Authentication = require("./middleware/authentication");
 
 // Middelware
-app.set("trust proxy", 1)
+app.set("trust proxy", 1);
 app.use(rateLimiter({ windowMs: 15 * 60 * 1000, max: 100 }));
 app.use(express.json());
 app.use(helmet());
@@ -29,6 +29,7 @@ app.use(xss());
 // extra packages
 
 // routes
+app.status(200).json({ msg: "Up and running successfully" });
 app.use("/api/v1/auth", authRoute);
 app.use("/api/v1/jobs", Authentication, jobRoute);
 
