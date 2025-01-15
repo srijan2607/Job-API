@@ -29,7 +29,6 @@ app.use(xss());
 // extra packages
 
 // routes
-app.status(200).json({ msg: "Up and running successfully" });
 app.use("/api/v1/auth", authRoute);
 app.use("/api/v1/jobs", Authentication, jobRoute);
 
